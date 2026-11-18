@@ -64,7 +64,7 @@ windows-loop-starter/
 
 ### 1단계 · GitHub에서 내려받고 바탕화면에 압축 풀기
 1. 인터넷 브라우저에서 아래 GitHub 저장소 주소로 접속합니다 (별도 로그인 불필요).
-   - **저장소 주소**: `https://github.com/mattt0204/yjl-loop`
+   - **저장소 주소**: `https://github.com/itssosunny/yjl-loop`
 2. 초록색 **[Code]** 버튼을 누르고 **[Download ZIP]**을 클릭합니다.
 3. 내려받은 압축 파일을 윈도우 **바탕화면**으로 옮긴 뒤, 마우스 오른쪽 버튼을 눌러 **[압축 풀기]**를 실행합니다.
 
