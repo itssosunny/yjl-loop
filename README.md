@@ -60,37 +60,73 @@ windows-loop-starter/
 
 ---
 
-## 3. 6회차 따라 하기 4단계 안내
+## 3. 윈도우(Windows) 설치 및 따라 하기 5단계 안내 (복사·붙여넣기용)
 
-### 1단계 · GitHub에서 내려받고 바탕화면에 압축 풀기
+### 0단계 · 윈도우 필수 프로그램 2가지 설치 (`PowerShell`에 복사·붙여넣기)
+
+윈도우 시작 버튼 옆 검색창에 **`PowerShell`**을 쳐서 실행한 뒤, 아래 두 줄을 차례대로 복사해 붙여넣고 엔터를 누릅니다.
+
+1. **웨이브 터미널(Wave Terminal) 설치**
+   ```powershell
+   winget install CommandLine.Wave
+   ```
+   - 만약 `winget`이 동작하지 않는 PC라면 공식 페이지(`https://www.waveterm.dev/download`)에서 Windows `.exe` 설치 파일을 직접 내려받아 실행합니다.
+
+2. **안티그래비티 CLI (`agy`) 설치**
+   - **PowerShell에서 설치할 때 (권장)**:
+     ```powershell
+     irm https://antigravity.google/cli/install.ps1 | iex
+     ```
+   - **기본 명령 프롬프트(CMD)에서 설치할 때**:
+     ```cmd
+     curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd
+     ```
+   - 설치 후 새 터미널 창을 열고 `agy --help`를 입력했을 때 안내 문구가 나오면 설치 완료입니다.
+
+---
+
+### 1단계 · GitHub에서 루프 폴더 내려받고 바탕화면에 압축 풀기
 1. 인터넷 브라우저에서 아래 GitHub 저장소 주소로 접속합니다 (별도 로그인 불필요).
    - **저장소 주소**: `https://github.com/itssosunny/yjl-loop`
-2. 초록색 **[Code]** 버튼을 누르고 **[Download ZIP]**을 클릭합니다.
-3. 내려받은 압축 파일을 윈도우 **바탕화면**으로 옮긴 뒤, 마우스 오른쪽 버튼을 눌러 **[압축 풀기]**를 실행합니다.
+   - **ZIP 바로 받기**: `https://github.com/itssosunny/yjl-loop/archive/refs/heads/main.zip`
+2. 우측 상단 초록색 **[Code]** 버튼을 누르고 **[Download ZIP]**을 클릭합니다.
+3. 내려받은 `yjl-loop-main.zip` 파일을 윈도우 **바탕화면**으로 옮긴 뒤, 마우스 오른쪽 버튼을 눌러 **[압축 풀기]**를 실행합니다 (바탕화면에 `yjl-loop-main` 폴더가 생깁니다).
 
-### 2단계 · 웨이브 터미널(Wave Terminal)로 폴더 열기
-1. **Wave Terminal**을 실행하고 바탕화면의 `windows-loop-starter` 폴더를 엽니다.
-2. **오른쪽 창(파일 미리보기)**에서 `실행.md`, `검수.md`, `기준표.md`, `기본예시_정보.md`와 `loops/application-writing-loop/` 폴더 안의 파일들을 클릭해 읽어 봅니다.
-3. **왼쪽 창(명령 실행창)**에서 **안티그래비티 CLI(Antigravity CLI)**를 실행합니다.
+---
+
+### 2단계 · 웨이브 터미널(Wave Terminal)로 폴더 열고 `agy` 켜기
+1. **Wave Terminal**을 실행합니다.
+2. **왼쪽 터미널 창**에서 바탕화면의 루프 폴더로 이동한 뒤 **안티그래비티 CLI(`agy`)**를 실행합니다:
+   ```powershell
+   cd "$HOME\Desktop\yjl-loop-main"
+   agy
+   ```
+   - *(만약 바탕화면이 OneDrive와 연동된 PC라면 `cd "$HOME\OneDrive\Desktop\yjl-loop-main"` 또는 탐색기에서 폴더 경로를 복사해 `cd "복사한경로"`를 입력합니다.)*
+   - 처음 `agy`를 실행하면 인터넷 창이 열리며 **Google 계정 로그인** 화면이 뜹니다. 로그인을 완료하면 터미널 입력 줄이 열립니다.
+3. **오른쪽 창(파일 미리보기)**을 열어 `실행.md`, `검수.md`, `기준표.md`, `기본예시_정보.md`와 `loops/application-writing-loop/` 폴더 안의 파일들을 클릭해 띄워 놓습니다.
+
+---
 
 ### 3단계 · [1턴 실습] 기본 예시로 실행하고 검수 판정 확인하기 (15분)
-1. 왼쪽 안티그래비티 CLI 창에 아래와 같이 입력합니다.
+1. 왼쪽 `agy` 실행창에 아래와 같이 입력하고 엔터를 누릅니다.
    ```text
    실행해줘
    ```
-2. 오른쪽 미리보기 창에 생성된 `초안.md`(및 `runs/2026-11-18_한국국토정보공사_기획행정/drafts/자기소개서.md`)를 열어 1턴 기본 초안을 확인합니다.
-3. 이어서 왼쪽 안티그래비티 CLI 창에 아래와 같이 입력합니다.
+2. 오른쪽 미리보기 창에 생성된 `초안.md`(및 `loops/application-writing-loop/runs/2026-11-18_한국국토정보공사_기획행정/drafts/자기소개서.md`)를 열어 1턴 기본 초안을 확인합니다.
+3. 이어서 왼쪽 `agy` 실행창에 아래와 같이 입력합니다.
    ```text
    검수해줘
    ```
 4. 오른쪽 미리보기 창에 생성된 `판정결과.md`를 열어 검수 1~3층과 그래프 4가지 관점 중 어떤 항목이 **[통과]**했고 어떤 항목이 **[미통과]**했는지 확인합니다.
+
+---
 
 ### 4단계 · [2턴 실습] 기준표에 조건 1개 추가하고 다시 돌려 비교하기 (15분)
 1. 오른쪽 창에서 `기준표.md`(또는 `loops/application-writing-loop/verification-rules.md`) 파일을 엽니다.
 2. 맨 아래 `## [2턴 실습] 내가 직접 추가하는 검수 조건` 칸에 내가 원하는 규칙 **1줄**을 직접 적어 넣고 저장(`Ctrl + S`)합니다.
    - 예시 1: `- 각 경험 문단마다 구체적인 성과 숫자(9만 건, 15명, 1회 추가 요청 등)를 빠짐없이 포함할 것`
    - 예시 2: `- 마지막 문장에 "최선을 다하겠습니다", "열심히 일하겠습니다" 같은 막연한 다짐 표현을 쓰지 말고 직무 기여 방법을 구체적으로 적을 것`
-3. 왼쪽 안티그래비티 CLI 창에서 다시 순서대로 입력합니다.
+3. 왼쪽 `agy` 실행창에서 다시 순서대로 입력합니다.
    ```text
    실행해줘
    ```
@@ -98,3 +134,12 @@ windows-loop-starter/
    검수해줘
    ```
 4. 내가 추가한 기준에 맞춰 `초안.md` 문장이 어떻게 구체적으로 바뀌었는지, `판정결과.md`에서 모든 항목이 **[통과]**로 바뀌었는지 비교합니다.
+
+---
+
+### 5단계 · 수업 종료 시 공용 PC 로그아웃 안내
+강의실 공용 윈도우 PC를 사용한 경우, 자리에서 일어나기 전에 `agy` 창에 아래 명령어를 입력해 계정을 로그아웃하고 종료합니다:
+```text
+/logout
+/exit
+```
